@@ -9,7 +9,7 @@ const showTotal = document.getElementById('totalClicks')
 clickerButton.addEventListener('click', () => {
     totalClicks += clickValue
     clickPoints += clickValue
-    showTotal.innerHTML = "<p>You clicked me</p>";
+    showTotal.innerHTML = "You clicked me";
 })
 
 const shopButton = document.getElementById('upgrade')
