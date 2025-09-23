@@ -5,16 +5,17 @@ let clickPoints = 0
 const upgradePrice = 5
 
 const clickerButton = document.getElementById('clicker')
+const showTotal = document.getElementById('totalClicks')
 clickerButton.addEventListener('click', () => {
     totalClicks += clickValue
     clickPoints += clickValue
-
+    showTotal.innerHTML = "<p>You clicked me</p>";
 })
 
 const shopButton = document.getElementById('upgrade')
 shopButton.addEventListener('click', () => {
     if (clickPoints >= upgradePrice) {
-        clcikPoints -= upgradePrice
+        clickPoints -= upgradePrice
         clickValue += 1
     }
 })
