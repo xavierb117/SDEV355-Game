@@ -23,6 +23,19 @@ shopButton.addEventListener('click', () => {
     money.innerHTML = `${clickPoints}`
 })
 
+const gambleButton = document.getElementById('gamble')
+gambleButton.addEventListener('click', () => {
+    if (clickPoints >= 10) {
+        clickPoints -= 10
+        let lose = 0;
+        let even = 1;
+        let win = 2;
+        let getRich = 3;
+        clickPoints += Math.floor(Math.random() * 50) -15
+    }
+    money.innerHTML = `${clickPoints}`
+})
+
 const loanButton = document.getElementById('loanButton')
 loanButton.addEventListener('click', () =>{
     clickPoints += 10
