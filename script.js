@@ -26,15 +26,17 @@ shopButton.addEventListener('click', () => {
 const gambleButton = document.getElementById('gamble')
 gambleButton.addEventListener('click', () => {
     if (clickPoints >= 20) {
+        let getPoor = 4
         let lose = 3;
         let even = 2;
         let win = 1;
         let getRich = 0;
-        let outcome = Math.floor(Math.random() * 4);
+        let outcome = Math.floor(Math.random() * 5);
         if(outcome == lose){clickPoints += (-20)}
         if(outcome == even){}
         if(outcome == win){clickPoints += 10}
         if(outcome == getRich){clickPoints += 50}
+        if(outcome == getPoor){clickPoints -= 50}
         }   
     money.innerHTML = `${clickPoints}`
 })
