@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="styles.css">
     <script src = "script.js" defer></script>
-    <title>JsGame</title>
+    <title>Financing Clicking Game</title>
 </head>
-<body>
-    <h1 id = "test">Click Something</h1>
+    <body>
+        <h1 id = "test">Finance Clicking Game</h1>
+        <div class = "mainClicker">
+            <h3>This button will give you money! </h3>
+            <button type = "button" id = "clicker">Click me!</button>
+            <p id = "totalClicks">Number of total clicks</p>
+        </div>
 
-    <div>
-        <h3>Button text</h3>
-        <button type = "button" id = "clicker">Click me!</button>
-        <p id = "totalClicks">Number of clicks</p>
-    </div>
+        <div class = "container">
+            <div id="shop">
+                <h2>Shop</h2>
+                <h3>Current $: </h3>
+                <p id = "money"></p>
+                <p>Plus one to clicks and money</p>
+                <p>Upgrade cost: $5</p>
+                <button type = "button" id = "upgrade">Upgrade</button>
+                <p>Gamble your money! Win big or lose...</p>
+                <p>Gamble cost: $20</p>
+                <button type = "button" id = "gamble">Gamble!</button>
+            </div>
+            
+            <div id="bank">
+                <h2>Bank</h2>
+                <p>Request a loan</p>
+                <p>Beware! Pay your debt to loan again</p>
+                <button type = "button" id = "loanButton">$10</button>
+            </div>
 
-    <div id="shop">
-        <h2>Shop</h2>
-        <h3>Current points: </h3>
-        <p id = "money"></p>
-        <p>Plus one to clicks</p>
-        <p>Upgrade cost: 5</p>
-        <button type = "button" id = "upgrade">Upgrade</button>
-        <p>Gamble cost: 20</p>
-        <button type = "button" id = "gamble">Gamble!</button>
-    </div>
-    
-    <div id="bank">
-        <h2>Bank</h2>
-        <p>Request a loan</p>
-        <button type = "button" id = "loanButton">10 points</button>
-    </div>
-
-</body>
+            <div id = "achievements">
+                <h2>Achievements</h2>
+            </div>
+        </div>
+    </body>
 </html>
