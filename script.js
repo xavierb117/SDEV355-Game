@@ -42,43 +42,35 @@ gambleButton.addEventListener('click', () => {
 })
 
 const loanButton = document.getElementById('loanButton')
-loanButton.addEventListener('click', () =>{
-
+loanButton.addEventListener('click', () => {
     clickPoints += 10
     debt += 15
     money.innerHTML = `${clickPoints}`
     const debtElement = document.createElement("p")
-    debtElement.className = "showDebt"
+    debtElement.id = "showDebt"
     debtElement.innerHTML = `${debt}`
     const bank = document.getElementById('bank')
     bank.appendChild(debtElement)
 
     const payLoan = document.createElement("button")
     payLoan.setAttribute('type', 'button')
-    payLoan.className = "loanButton"
+    payLoan.id = "debtButton"
     payLoan.innerHTML = "PAY YOUR DEBT!!!!!"
     bank.appendChild(payLoan)
-
     loanButton.remove()
-})
 
-const payLoanButton = document.getElementsByClassName("loanButton");
-payLoanButton.addEventListener('click', () => {
-    if (clickPoints >= 15) {
-        const newButton = document.createElement("button")
-        newButton.setAttribute('type', 'button')
-        newButton.id = "loanButton"
-        newButton.innerHTML = "10 points"
+    payLoan.addEventListener('click', () => {
+        console.log("Button Clicked")
+        if (clickPoints >= 15) {
+            debtElement.remove()
 
-        const debt = document.getElementsByClassName("showDebt")
-        debt.remove()
+            clickPoints -= 15
+            money.innerHTML = `${clickPoints}`
 
-        const payLoan = document.getElementsByClassName("loanButton")
-        payLoan.remove();
+            payLoan.remove();
+            bank.appendChild(loanButton)
 
-        const bank = document.getElementById('bank')
-        bank.appendChild(newButton)
-
-        clickPoints -= 15
-    }
+            debt = 0
+        }
+    })
 })
